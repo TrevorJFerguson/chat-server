@@ -1,0 +1,9 @@
+# general
+.DS_store
+
+# dependencies
+node_modules/
+
+# dotenv config ignore
+.env
+.env.test
