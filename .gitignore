@@ -7,3 +7,6 @@ node_modules/
 # dotenv config ignore
 .env
 .env.test
+
+# the route rest testing file
+route.rest
