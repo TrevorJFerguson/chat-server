@@ -20,7 +20,7 @@ mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology
 
 // put routers here, likely wont need them for such simple req handling
 // but will make life easier if we add more functionality later
-const messagesRouter = require('./server/routers/messages')
+const messagesRouter = require(path.resolve('server/routers/messages'))
 
 
 // any static assets will be served here though we shouldnt need any given the usage

@@ -2,8 +2,8 @@
 const express = require('express')
 const path = require('path')
 const router = express.Router()
-const Message = require('../../db_models/newMessage')
-const dbController = require('../../server/controllers/dbController')
+const Message = require(path.resolve('db_models/newMessage'))
+const dbController = require(path.resolve('server/controllers/dbController'))
 
 router.get('/', async (req, res) => {
     try {
@@ -21,7 +21,6 @@ router.post('/', async (req, res) => {
     })
     try {
         await newMessage.save()
-        // res.status(201).json(newMessage);
         const allMessages = await Message.find();
         res.status(201).json(allMessages);
     } catch (e) {
