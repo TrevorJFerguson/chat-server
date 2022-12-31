@@ -18,16 +18,6 @@ mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology
     console.log('major error alert: ', err)
 })
 
-// storing local db setup for later
-// mongoose.set("strictQuery", false)
-// mongoose.connect('mongodb://localhost:27017/messagesDb', { useNewUrlParser: true, useUnifiedTopology: true })
-// .then(() => {
-//     console.log('DB connection OPEN!')
-// })
-// .catch(err => {
-//     console.log('major error alert: ', err)
-// })
-
 // put routers here, likely wont need them for such simple req handling
 // but will make life easier if we add more functionality later
 const messagesRouter = require('./server/routers/messages')
@@ -36,8 +26,6 @@ const messagesRouter = require('./server/routers/messages')
 // any static assets will be served here though we shouldnt need any given the usage
 
 // handle get req to messages and respond with all db data (all prior messages)
-app.use('/messages', messagesRouter);
-
 app.use('/messages', messagesRouter);
 
 app.use('/', (req, res) => {
