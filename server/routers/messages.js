@@ -8,7 +8,7 @@ const dbController = require(path.resolve('server/controllers/dbController'))
 router.get('/', async (req, res) => {
     try {
         const allMessages = await Message.find()
-        res.json(allMessages)
+        res.status(200).json(allMessages)
     } catch (e) {
         res.status(500).json({ message: e.message })
     }
