@@ -21,8 +21,7 @@ router.post('/', async (req, res) => {
     })
     try {
         await newMessage.save()
-        const allMessages = await Message.find();
-        res.status(201).json(allMessages);
+        res.status(201).json({ new_message_posted: newMessage });
     } catch (e) {
         res.status(400).json({message: e.message})
     }
